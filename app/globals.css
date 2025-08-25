@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to use warm cream background with onyx text */
+  --background: oklch(98.526% 0.00683 88.608); /* warm cream background #F5F1ED */
+  --foreground: #6f635b; /* Secondary color for body text */
+  --card: oklch(97% 0.01 85); /* slightly lighter cream for cards */
+  --card-foreground: #6f635b; /* Secondary color for card text */
+  --popover: oklch(97% 0.01 85); /* slightly lighter cream */
+  --popover-foreground: #6f635b; /* Secondary color for popover text */
+  --primary: #b81202; /* Principal color for headings */
+  --primary-foreground: #ece6d3; /* Light color for text on primary */
+  --secondary: #6f635b; /* Secondary color */
+  --secondary-foreground: #ece6d3; /* Light color for text on secondary */
+  --muted: #c0bfb2; /* Neutral color for muted elements */
+  --muted-foreground: #221712; /* Dark color for muted text */
+  --accent: #c0bfb2; /* Neutral color for accents */
+  --accent-foreground: #221712; /* Dark color for accent text */
+  --destructive: oklch(0.577 0.245 27.325); /* red */
+  --destructive-foreground: oklch(1 0 0); /* white */
+  --border: #c0bfb2; /* Neutral color for borders */
+  --input: #ece6d3; /* Light color for input backgrounds */
+  --ring: #b81202; /* Principal color for focus rings */
+  --chart-1: #b81202; /* Principal */
+  --chart-2: #6f635b; /* Secondary */
+  --chart-3: #221712; /* Dark */
+  --chart-4: #ece6d3; /* Light */
+  --chart-5: #c0bfb2; /* Neutral */
+  --radius: 0.75rem;
+  --sidebar: #ece6d3; /* Light color for sidebar */
+  --sidebar-foreground: #6f635b; /* Secondary color for sidebar text */
+  --sidebar-primary: #b81202; /* Principal color */
+  --sidebar-primary-foreground: #ece6d3; /* Light color for text */
+  --sidebar-accent: #c0bfb2; /* Neutral color for accent */
+  --sidebar-accent-foreground: #221712; /* Dark color for accent text */
+  --sidebar-border: #6f635b; /* Secondary borders */
+  --sidebar-ring: #b81202; /* Principal rings */
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+.dark {
+  /* Dark mode now uses onyx background with light text */
+  --background: #221712; /* Dark background */
+  --foreground: #ece6d3; /* Light text for dark mode */
+  --card: #221712; /* Dark cards */
+  --card-foreground: #ece6d3; /* Light text on cards */
+  --popover: #221712; /* Dark popover */
+  --popover-foreground: #ece6d3; /* Light text */
+  --primary: #b81202; /* Principal color for headers */
+  --primary-foreground: #ece6d3; /* Light text on primary */
+  --secondary: #6f635b; /* Secondary color */
+  --secondary-foreground: #ece6d3; /* Light text on secondary */
+  --muted: #6f635b; /* Secondary for muted elements */
+  --muted-foreground: #c0bfb2; /* Neutral for muted text */
+  --accent: #c0bfb2; /* Neutral accent */
+  --accent-foreground: #221712; /* Dark text on accent */
+  --destructive: oklch(0.577 0.245 27.325); /* red */
+  --destructive-foreground: oklch(1 0 0); /* white */
+  --border: #6f635b; /* Secondary for borders */
+  --input: #6f635b; /* Secondary for input backgrounds */
+  --ring: #b81202; /* Principal for focus rings */
+  --chart-1: #b81202; /* Principal */
+  --chart-2: #6f635b; /* Secondary */
+  --chart-3: #ece6d3; /* Light */
+  --chart-4: #c0bfb2; /* Neutral */
+  --chart-5: #221712; /* Dark */
+  --sidebar: #6f635b; /* Secondary sidebar */
+  --sidebar-foreground: #ece6d3; /* Light text */
+  --sidebar-primary: #b81202; /* Principal */
+  --sidebar-primary-foreground: #ece6d3; /* Light text */
+  --sidebar-accent: #c0bfb2; /* Neutral accent */
+  --sidebar-accent-foreground: #221712; /* Dark text */
+  --sidebar-border: #6f635b; /* Secondary borders */
+  --sidebar-ring: #b81202; /* Principal rings */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-space-grotesk);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    position: relative;
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #b81202; /* Principal color for headings */
+  }
+
+  .subheading {
+    color: #221712; /* Dark color for subheadings */
+  }
+
+  .section-heading {
+    @apply font-heading font-black text-3xl lg:text-4xl tracking-tight;
+    color: #b81202; /* Principal color for section headings */
+  }
+
+  .portfolio-card {
+    @apply bg-card rounded-xl shadow-sm border border-border/50;
+  }
+  .stat-number {
+    @apply font-heading font-black text-2xl;
+    color: #b81202; /* Principal color for stat numbers */
+  }
+}
