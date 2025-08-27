@@ -294,7 +294,7 @@ I enjoy creating products that feel effortless to use but are powerful under the
               <div className="space-y-6">
                 <div className="border-l-2 border-foreground pl-4">
                   <h4 className="font-heading font-bold text-sm">LEAD FULL STACK DEVELOPER</h4>
-                  <p className="text-xs text-muted-foreground">INCUS CAPITAL • 2023-2024</p>
+                  <p className="text-xs text-muted-foreground">INCUS CAPITAL • 2023-2025</p>
                 </div>
                 <div className="border-l-2 border-muted-foreground pl-4">
                   <h4 className="font-heading font-bold text-sm">SOFTWARE ENGINEER</h4>
