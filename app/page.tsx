@@ -68,7 +68,7 @@ export default function HomePage() {
                 <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
                   2-4
                 </div>
-                <p className="text-sm text-muted-foreground">Features shipped per print</p>
+                <p className="text-sm text-muted-foreground">Features shipped per sprint</p>
               </div>
               <div>
                 <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
