@@ -21,7 +21,7 @@ export default function HomePage() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                 <span style={{ color: "#b81202" }}>A Software Developer</span> <br />
                 <span className="italic font-medium" style={{ color: "#b81202" }}>
-                  & Data Workflow Arquitect
+                  & Data Workflow Architect
                 </span>{" "}
                 <br />
               </h1>
@@ -68,13 +68,13 @@ export default function HomePage() {
                 <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
                   2-4
                 </div>
-                <p className="text-sm text-muted-foreground">Features shipped/Sprint</p>
+                <p className="text-sm text-muted-foreground">Features shipped per print</p>
               </div>
               <div>
                 <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
                   13+
                 </div>
-                <p className="text-sm text-muted-foreground">Software issues resolved/Week</p>
+                <p className="text-sm text-muted-foreground">Software issues resolved per week</p>
               </div>
             </div>
           </div>

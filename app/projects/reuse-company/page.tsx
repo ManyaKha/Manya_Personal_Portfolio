@@ -3,9 +3,21 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Calendar, Users, TrendingUp, Code, Settings, ChevronUp, Zap, GitBranch, Mail } from "lucide-react"
+import {
+  ArrowLeft,
+  Calendar,
+  Users,
+  TrendingUp,
+  Code,
+  Settings,
+  ChevronUp,
+  Zap,
+  GitBranch,
+  Mail,
+  ChevronDown,
+} from "lucide-react"
 import { useEffect, useState } from "react"
-import { X, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
+import { X, Phone, MapPin, Linkedin } from "lucide-react"
 
 export default function ReuseCompanyPage() {
   const [toggles, setToggles] = useState({
@@ -27,7 +39,7 @@ export default function ReuseCompanyPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -150,7 +162,10 @@ export default function ReuseCompanyPage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">OBJECTIVE</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">OBJECTIVE</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">INTEGRATION GOALS</span>
               </>
@@ -233,7 +248,10 @@ export default function ReuseCompanyPage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">INTEGRATION COMPLEXITY</span>
               </>
@@ -309,7 +327,10 @@ export default function ReuseCompanyPage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">SOLUTION DELIVERED</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">SOLUTION DELIVERED</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">VISUAL STUDIO INTEGRATION</span>
               </>
@@ -480,7 +501,10 @@ export default function ReuseCompanyPage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">IMPACT & RESULTS</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">IMPACT & RESULTS</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">PRODUCTIVITY GAINS</span>
               </>
@@ -573,7 +597,10 @@ export default function ReuseCompanyPage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">FINAL THESIS PRESENTATION</span>
               </>
@@ -705,8 +732,6 @@ export default function ReuseCompanyPage() {
           </div>
         </div>
       )}
-
-
     </div>
   )
 }

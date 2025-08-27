@@ -15,8 +15,9 @@ import {
   BarChart3,
   Settings,
   ChevronUp,
+  ChevronDown,
 } from "lucide-react"
-import { X, Mail, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
+import { X, Mail, Phone, MapPin, Linkedin } from "lucide-react"
 
 import { useEffect, useState } from "react"
 
@@ -40,7 +41,7 @@ export default function IncusCapitalPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false)
   return (
     <div className="min-h-screen bg-background font-sans">
       {/* Navigation */}
@@ -294,8 +295,9 @@ export default function IncusCapitalPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3">
                   <h3 className="text-2xl font-normal section-heading">USE CASE</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">DAILY OPERATIONS</span>
               </>
@@ -385,8 +387,9 @@ export default function IncusCapitalPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3">
                   <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">TECHNICAL CHALLENGES</span>
               </>
@@ -555,8 +558,9 @@ export default function IncusCapitalPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3">
                   <h3 className="text-2xl font-normal section-heading">SOLUTION DELIVERED</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">FINANCIAL ENGINE</span>
               </>
@@ -749,8 +753,9 @@ export default function IncusCapitalPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3">
                   <h3 className="text-2xl font-normal section-heading">IMPACT & RESULTS</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">TRANSFORMATION</span>
               </>
@@ -821,8 +826,9 @@ export default function IncusCapitalPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3">
                   <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">SYSTEM IN ACTION</span>
               </>
@@ -930,8 +936,6 @@ export default function IncusCapitalPage() {
           </div>
         </div>
       )}
-
-      
     </div>
   )
 }

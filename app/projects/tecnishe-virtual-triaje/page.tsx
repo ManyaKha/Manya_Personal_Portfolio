@@ -4,10 +4,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Users, Brain, ChevronUp, Stethoscope, Activity, Clock, Mail } from "lucide-react"
+import { ArrowLeft, Users, Brain, ChevronUp, Stethoscope, Activity, Clock, Mail, ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
-import { X, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
-
+import { X, Phone, MapPin, Linkedin } from "lucide-react"
 
 export default function TechnishePage() {
   const [toggles, setToggles] = useState({
@@ -28,7 +27,7 @@ export default function TechnishePage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -202,7 +201,10 @@ export default function TechnishePage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">CANADIAN EMERGENCY DEPARTMENT CRISIS</span>
               </>
@@ -298,7 +300,10 @@ export default function TechnishePage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">SOLUTION</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">SOLUTION</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">AI-POWERED REMOTE TRIAGING</span>
               </>
@@ -433,7 +438,10 @@ export default function TechnishePage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">OUTCOMES & RECOGNITION</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">OUTCOMES & RECOGNITION</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">SIMULATION RESULTS & AWARDS</span>
               </>
@@ -533,7 +541,10 @@ export default function TechnishePage() {
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                  </div>
                 </div>
                 <span className="text-sm text-muted-foreground">SYSTEM SCREENSHOTS</span>
               </>
@@ -641,7 +652,6 @@ export default function TechnishePage() {
           </div>
         </div>
       )}
-
     </div>
   )
 }

@@ -17,10 +17,10 @@ import {
   Clock,
   Settings,
   ChevronUp,
+  ChevronDown,
 } from "lucide-react"
 import { useEffect, useState } from "react"
-import { X, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
-
+import { X, Phone, MapPin, Linkedin } from "lucide-react"
 
 export default function NewsAppPage() {
   const [toggles, setToggles] = useState({
@@ -42,7 +42,7 @@ export default function NewsAppPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -129,7 +129,7 @@ export default function NewsAppPage() {
                   <div>
                     <h4 className="font-semibold text-primary mb-2">Role</h4>
                     <p className="text-muted-foreground">
-                      Full-stack developer &
+                      Full-stack developer &amp;
                       <br />
                       product designer
                     </p>
@@ -216,8 +216,9 @@ export default function NewsAppPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3 flex-1">
                   <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">MANUAL PROCESSES</span>
               </>
@@ -302,8 +303,9 @@ export default function NewsAppPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3 flex-1">
                   <h3 className="text-2xl font-normal section-heading">SOLUTION DELIVERED</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">AUTOMATION ENGINE</span>
               </>
@@ -507,8 +509,9 @@ export default function NewsAppPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3 flex-1">
                   <h3 className="text-2xl font-normal section-heading">IMPACT & RESULTS</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">TRANSFORMATION</span>
               </>
@@ -580,8 +583,9 @@ export default function NewsAppPage() {
               </>
             ) : (
               <>
-                <div className="flex items-center gap-8 flex-1">
+                <div className="flex items-center gap-3 flex-1">
                   <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground">SYSTEM IN ACTION</span>
               </>
@@ -590,7 +594,7 @@ export default function NewsAppPage() {
 
           {toggles.demo && (
             <div className="space-y-8">
-              {[1,2].map((num) => (
+              {[1, 2].map((num) => (
                 <div key={num} className="relative">
                   <img
                     src={`/images/portfolio/newsapp(${num}).png`}
@@ -601,9 +605,7 @@ export default function NewsAppPage() {
               ))}
             </div>
           )}
-
         </div>
-
       </div>
 
       {/* Footer */}
@@ -691,7 +693,6 @@ export default function NewsAppPage() {
           </div>
         </div>
       )}
-
     </div>
   )
 }
