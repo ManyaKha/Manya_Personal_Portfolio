@@ -26,9 +26,9 @@ export default function HomePage() {
                 <br />
               </h1>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
-                I build end-to-end digital products that blend clean engineering with intuitive design. With experience
-                leading fintech, healthtech, and SaaS projects, I bridge code, data, and user experience—turning complex
-                workflows into scalable, user-friendly solutions.
+                I build intelligent digital products that merge engineering, design, and AI.
+                With experience across fintech, healthtech, and SaaS, I transform messy workflows into streamlined systems, integrating full-stack development, data workflows, and AI-driven automation. 
+                From APIs to user interfaces, I bridge code, data, and intelligence to deliver scalable, human centered solutions.
               </p>
               <Button
                 className="rounded-full px-6 py-2 hover:opacity-90"
@@ -92,6 +92,13 @@ export default function HomePage() {
             </div>
             <div className="text-center space-y-3 flex flex-col h-full">
               <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
+                ARTIFICIAL INTELLIGENCE & AUTOMATION
+              </h3>
+              <div className="w-full h-px bg-border/30"></div>
+              <p className="text-xs text-muted-foreground">Custom AI models, GPT integration, and workflow automation to enhance efficiency.</p>
+            </div>
+            <div className="text-center space-y-3 flex flex-col h-full">
+              <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
                 API DESIGN & INTEGRATION
               </h3>
               <div className="w-full h-px bg-border/30"></div>
@@ -103,13 +110,6 @@ export default function HomePage() {
               </h3>
               <div className="w-full h-px bg-border/30"></div>
               <p className="text-xs text-muted-foreground">Mobile-first design principles for all devices.</p>
-            </div>
-            <div className="text-center space-y-3 flex flex-col h-full">
-              <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
-                PERFORMANCE OPTIMIZATION
-              </h3>
-              <div className="w-full h-px bg-border/30"></div>
-              <p className="text-xs text-muted-foreground">Fast, scalable applications with modern development.</p>
             </div>
           </div>
         </div>
@@ -128,14 +128,12 @@ export default function HomePage() {
             </div>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                Hey, I'm a software developer passionate about creating robust and user-friendly digital experiences.
+                Hey, I'm a software developer passionate about creating robust and user friendly digital experiences.
               </p>
               <p className="text-muted-foreground">
-                With a keen eye for clean code and a deep understanding of user behavior, I design applications and
-                interfaces that not only look great but also resonate with audiences. Whether it's building a web
-                application from the ground up or refining a digital product for seamless usability, I bring strategy,
-                creativity, and functionality to bring ideas to life. Let's collaborate and make something
-                extraordinary.
+I believe automation isn’t just about efficiency it’s about giving people time back to focus on what really matters. To me, there’s a certain beauty in taking something messy and turning it into a system that runs smoothly on its own. Design and implementation go hand in hand, the design makes a product meaningful to people, and the implementation makes it reliable enough to trust.
+
+I enjoy creating products that feel effortless to use but are powerful under the hood, where clean engineering, thoughtful design, and smart automation work together. My goal is to build tools that simplify complexity, save time, and make life just a little easier.
               </p>
             </div>
           </div>
@@ -160,17 +158,17 @@ export default function HomePage() {
             <div className="border-r border-border/20 pr-6">
               <h3 className="font-heading font-bold text-sm mb-3 tracking-wider">LANGUAGES</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">JavaScript</Badge>
-                <Badge variant="outline">TypeScript</Badge>
                 <Badge variant="outline">Python</Badge>
+                <Badge variant="outline">C#</Badge>
+                <Badge variant="outline">Next.js</Badge>
               </div>
             </div>
             <div className="border-r border-border/20 pr-6 pl-6">
               <h3 className="font-heading font-bold text-sm mb-3 tracking-wider">FRAMEWORKS</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">React</Badge>
-                <Badge variant="outline">Next.js</Badge>
-                <Badge variant="outline">Node.js</Badge>
+                <Badge variant="outline">.NET Core</Badge>
+                <Badge variant="outline">Figma</Badge>
+                <Badge variant="outline">Blender</Badge>
               </div>
             </div>
             <div className="border-r border-border/20 pr-6 pl-6">
@@ -178,7 +176,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">PostgreSQL</Badge>
                 <Badge variant="outline">MongoDB</Badge>
-                <Badge variant="outline">Redis</Badge>
+                <Badge variant="outline">MySql</Badge>
               </div>
             </div>
             <div className="pl-6">
@@ -216,13 +214,13 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="text-xs">
-                    React
+                    .Net Core
                   </Badge>
                   <Badge variant="secondary" className="text-xs">
-                    Node.js
+                    Next.js
                   </Badge>
                   <Badge variant="secondary" className="text-xs">
-                    PostgreSQL
+                    MySql
                   </Badge>
                 </div>
                 <Button variant="outline" asChild className="w-full text-xs bg-transparent">
@@ -237,10 +235,10 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="text-xs">
-                    Next.js
+                    Python
                   </Badge>
                   <Badge variant="secondary" className="text-xs">
-                    Python
+                    Neo4j
                   </Badge>
                   <Badge variant="secondary" className="text-xs">
                     AI/ML
@@ -258,13 +256,13 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="text-xs">
-                    React
+                    AI/ML
                   </Badge>
                   <Badge variant="secondary" className="text-xs">
-                    Express
+                    Next.js
                   </Badge>
                   <Badge variant="secondary" className="text-xs">
-                    MongoDB
+                    Python
                   </Badge>
                 </div>
                 <Button variant="outline" asChild className="w-full text-xs bg-transparent">
@@ -295,7 +293,7 @@ export default function HomePage() {
               <h3 className="font-heading font-bold text-lg mb-4 tracking-wider">RECENT POSITIONS</h3>
               <div className="space-y-6">
                 <div className="border-l-2 border-foreground pl-4">
-                  <h4 className="font-heading font-bold text-sm">SENIOR FULL STACK DEVELOPER</h4>
+                  <h4 className="font-heading font-bold text-sm">LEAD FULL STACK DEVELOPER</h4>
                   <p className="text-xs text-muted-foreground">INCUS CAPITAL • 2023-2024</p>
                 </div>
                 <div className="border-l-2 border-muted-foreground pl-4">
@@ -303,7 +301,7 @@ export default function HomePage() {
                   <p className="text-xs text-muted-foreground">REUSE COMPANY • 2022-2023</p>
                 </div>
                 <div className="border-l-2 border-muted-foreground pl-4">
-                  <h4 className="font-heading font-bold text-sm">FRONTEND DEVELOPER</h4>
+                  <h4 className="font-heading font-bold text-sm">DATA ARCHITECT</h4>
                   <p className="text-xs text-muted-foreground">HAVAS • 2021-2022</p>
                 </div>
               </div>
@@ -317,7 +315,7 @@ export default function HomePage() {
                   <div className="w-16 h-1 bg-foreground rounded"></div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm">React & Next.js</span>
+                  <span className="text-sm">Artificial Intelligence</span>
                   <div className="w-14 h-1 bg-foreground rounded"></div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -325,7 +323,7 @@ export default function HomePage() {
                   <div className="w-12 h-1 bg-foreground rounded"></div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm">DevOps & Cloud</span>
+                  <span className="text-sm">UI/UX Design</span>
                   <div className="w-10 h-1 bg-foreground rounded"></div>
                 </div>
               </div>
@@ -361,7 +359,7 @@ export default function HomePage() {
                   <Mail size={18} style={{ color: "#b81202" }} />
                   <div>
                     <p className="text-sm font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">hello@soltdesign.com</p>
+                    <p className="text-sm text-muted-foreground">manyakh8@gmail.com</p>
                   </div>
                 </div>
 
@@ -369,7 +367,7 @@ export default function HomePage() {
                   <Phone size={18} style={{ color: "#b81202" }} />
                   <div>
                     <p className="text-sm font-medium">Phone</p>
-                    <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-sm text-muted-foreground">+34 636106843</p>
                   </div>
                 </div>
 
@@ -377,7 +375,7 @@ export default function HomePage() {
                   <MapPin size={18} style={{ color: "#b81202" }} />
                   <div>
                     <p className="text-sm font-medium">Location</p>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-sm text-muted-foreground">Madrid, Spain</p>
                   </div>
                 </div>
 
@@ -385,7 +383,7 @@ export default function HomePage() {
                   <Linkedin size={18} style={{ color: "#b81202" }} />
                   <div>
                     <p className="text-sm font-medium">LinkedIn</p>
-                    <p className="text-sm text-muted-foreground">linkedin.com/in/soltdesign</p>
+                    <p className="text-sm text-muted-foreground">www.linkedin.com/in/manya-khanna-7b5ab21a2/</p>
                   </div>
                 </div>
               </div>
@@ -393,13 +391,13 @@ export default function HomePage() {
               <div className="w-full h-px bg-border/30"></div>
 
               <div className="flex gap-3">
-                <Button
+                {/* <Button
                   className="flex-1 rounded-full"
                   style={{ backgroundColor: "#b81202", color: "white" }}
-                  onClick={() => window.open("mailto:hello@soltdesign.com")}
+                  onClick={() => window.open("manyakh8@gmail.com")}
                 >
                   Send Email
-                </Button>
+                </Button> */}
                 <Button
                   variant="outline"
                   className="flex-1 rounded-full bg-transparent"
@@ -412,6 +410,8 @@ export default function HomePage() {
           </div>
         </div>
       )}
+
+      
     </div>
   )
 }

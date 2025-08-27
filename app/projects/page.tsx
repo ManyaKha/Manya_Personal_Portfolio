@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
+import { X, Mail, Phone, MapPin, Linkedin, ArrowRight, ArrowLeft } from "lucide-react"
+
 
 const projects = [
   {
@@ -12,7 +13,7 @@ const projects = [
     description:
       "A comprehensive fintech platform providing investment management and portfolio tracking solutions. Built with modern web technologies to deliver real-time financial data and analytics.",
     category: "Fintech",
-    technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "AWS"],
+    technologies: ["Next.js", "Angular",".NET", "MySQL"],
     liveUrl: "#",
     githubUrl: "#",
     slug: "incus-capital",
@@ -23,7 +24,7 @@ const projects = [
     description:
       "An innovative virtual healthcare triage system that streamlines patient assessment and care coordination. Features AI-powered symptom analysis and appointment scheduling.",
     category: "Healthcare",
-    technologies: ["Vue.js", "Node.js", "MongoDB", "Python", "Docker"],
+    technologies: ["Python", "React", "Neo4J", "Docker"],
     liveUrl: "#",
     githubUrl: "#",
     slug: "tecnishe-virtual-triaje",
@@ -34,7 +35,7 @@ const projects = [
     description:
       "A modern news aggregation platform that curates content from multiple sources. Features personalized feeds, real-time updates, and advanced search capabilities.",
     category: "Media",
-    technologies: ["React", "Express", "Redis", "Elasticsearch", "AWS"],
+    technologies: ["Python", "Next.js", "MySql"],
     liveUrl: "#",
     githubUrl: "#",
     slug: "news-app",
@@ -54,6 +55,7 @@ const projects = [
 
 export default function ProjectsPage() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,11 +92,11 @@ export default function ProjectsPage() {
                 Experience
               </Link>
               <Button
-                asChild
                 className="bg-gray-900 text-white hover:bg-gray-800"
                 style={{ backgroundColor: "#b81202", color: "white" }}
+                onClick={() => setIsContactOpen(true)}
               >
-                <Link href="/#contact">Contact</Link>
+                Contact
               </Button>
             </div>
           </div>
@@ -145,6 +147,92 @@ export default function ProjectsPage() {
           ))}
         </div>
       </div>
+
+
+      {isContactOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background border border-border rounded-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setIsContactOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-light mb-2" style={{ color: "#b81202" }}>
+                  Let's Connect
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Ready to bring your vision to life? Get in touch and let's create something amazing together.
+                </p>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Mail size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm text-muted-foreground">manyakh8@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Phone size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Phone</p>
+                    <p className="text-sm text-muted-foreground">+34 636106843</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Location</p>
+                    <p className="text-sm text-muted-foreground">Madrid, Spain</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Linkedin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">www.linkedin.com/in/manya-khanna-7b5ab21a2/</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="flex gap-3">
+                {/* <Button
+                  className="flex-1 rounded-full"
+                  style={{ backgroundColor: "#b81202", color: "white" }}
+                  onClick={() => window.open("manyakh8@gmail.com")}
+                >
+                  Send Email
+                </Button> */}
+                <Button
+                  variant="outline"
+                  className="flex-1 rounded-full bg-transparent"
+                  onClick={() => setIsContactOpen(false)}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Footer */}
+      <footer className="border-t border-border py-8 px-6">
+        <div className="max-w-6xl mx-auto text-center text-muted-foreground">
+          <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }

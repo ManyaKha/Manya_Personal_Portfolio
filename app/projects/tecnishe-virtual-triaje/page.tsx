@@ -4,13 +4,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Users, Brain, ChevronUp, Stethoscope, Activity, Clock } from "lucide-react"
+import { ArrowLeft, Users, Brain, ChevronUp, Stethoscope, Activity, Clock, Mail } from "lucide-react"
 import { useEffect, useState } from "react"
+import { X, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
+
 
 export default function TechnishePage() {
   const [toggles, setToggles] = useState({
-    useCase: false,
-    challenge: false,
+    problem: false,
     solution: false,
     impact: false,
     demo: false,
@@ -26,6 +27,8 @@ export default function TechnishePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -51,9 +54,12 @@ export default function TechnishePage() {
               <Link href="/experience" className="text-muted-foreground hover:text-primary transition-colors">
                 Experience
               </Link>
-              <Button asChild
-              style={{ backgroundColor: "#b81202", color: "white" }}>
-                <Link href="/#contact">Contact</Link>
+              <Button
+                className="bg-gray-900 text-white hover:bg-gray-800"
+                style={{ backgroundColor: "#b81202", color: "white" }}
+                onClick={() => setIsContactOpen(true)}
+              >
+                Contact
               </Button>
             </div>
           </div>
@@ -180,69 +186,96 @@ export default function TechnishePage() {
           </div>
         </section>
 
-        {/* Challenge Section */}
-        <div className={`${toggles.challenge ? "py-12" : "py-4"}`}>
+        {/* Problem Section (formerly Use Case) */}
+        <div className={`${toggles.problem ? "py-12" : "py-4"}`}>
           <div
             className={`cursor-pointer hover:opacity-80 transition-opacity ${
-              toggles.challenge ? "flex items-center justify-between mb-8" : "flex items-center justify-between py-4"
+              toggles.problem ? "flex items-center justify-between mb-8" : "flex items-center justify-between py-4"
             }`}
-            onClick={() => toggleSection("challenge")}
+            onClick={() => toggleSection("problem")}
           >
-            {toggles.challenge ? (
+            {toggles.problem ? (
               <>
-                <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
                 <ChevronUp className="h-5 w-5" />
               </>
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                  <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
                 </div>
-                <span className="text-sm text-muted-foreground">EMERGENCY DEPARTMENT INEFFICIENCIES</span>
+                <span className="text-sm text-muted-foreground">CANADIAN EMERGENCY DEPARTMENT CRISIS</span>
               </>
             )}
           </div>
-          {toggles.challenge && <div className="w-full h-px bg-border/30 mb-8"></div>}
+          {toggles.problem && <div className="w-full h-px bg-border/30 mb-8"></div>}
 
-          {toggles.challenge && (
+          {toggles.problem && (
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground">
-                Emergency departments face high patient volumes and inefficient triage workflows, resulting in long wait
-                times, patient misprioritization, and delayed care.
+                Emergency departments in Canada face chronic overcrowding. The average waiting time in Canadian EDs
+                ranges from three to four hours (Hildebrandt, 2014), and studies show that approximately 85% of Ontario
+                residents are discharged without further diagnosis after visiting the ED.
               </p>
 
+              <div className="bg-muted/20 p-6 rounded-lg border border-border/30">
+                <h4 className="text-lg font-semibold text-primary mb-4">Critical Inefficiency</h4>
+                <p className="text-muted-foreground">
+                  This highlights a critical inefficiency: large volumes of patients use scarce ER resources for
+                  non-urgent conditions that could be managed elsewhere.
+                </p>
+              </div>
+
               <div className="space-y-8">
-                <div className="border-l-4 border-primary pl-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <h5 className="text-lg font-normal">Long Wait Times</h5>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Patients experiencing extended delays in emergency departments due to inefficient triage processes
-                    and high patient volumes.
-                  </p>
-                </div>
+                <h4 className="text-xl font-normal text-primary">Traditional Triage Limitations</h4>
+                <p className="text-muted-foreground mb-6">
+                  Traditional triage requires in-person assessment by nurses, which creates:
+                </p>
 
-                <div className="border-l-4 border-primary pl-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Users className="h-5 w-5 text-primary" />
-                    <h5 className="text-lg font-normal">Patient Misprioritization</h5>
+                <div className="space-y-6">
+                  <div className="border-l-4 border-primary pl-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Clock className="h-5 w-5 text-primary" />
+                      <h5 className="text-lg font-normal">Long Wait Times and Patient Frustration</h5>
+                    </div>
+                    <p className="text-muted-foreground">
+                      Patients experience extended delays due to manual assessment processes, leading to increased
+                      frustration and potential deterioration of conditions.
+                    </p>
                   </div>
-                  <p className="text-muted-foreground">
-                    Critical cases not being identified quickly enough, while less urgent cases consume valuable triage
-                    resources.
-                  </p>
-                </div>
 
-                <div className="border-l-4 border-primary pl-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Activity className="h-5 w-5 text-primary" />
-                    <h5 className="text-lg font-normal">Workflow Inefficiencies</h5>
+                  <div className="border-l-4 border-primary pl-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Activity className="h-5 w-5 text-primary" />
+                      <h5 className="text-lg font-normal">Bottlenecks That Delay Life-Threatening Treatment</h5>
+                    </div>
+                    <p className="text-muted-foreground">
+                      Critical cases may be delayed while staff assess less urgent patients, potentially compromising
+                      outcomes for emergency situations.
+                    </p>
                   </div>
-                  <p className="text-muted-foreground">
-                    Manual triage processes creating bottlenecks and preventing optimal patient flow through emergency
-                    departments.
-                  </p>
+
+                  <div className="border-l-4 border-primary pl-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Users className="h-5 w-5 text-primary" />
+                      <h5 className="text-lg font-normal">Inefficient Use of Staff and Hospital Capacity</h5>
+                    </div>
+                    <p className="text-muted-foreground">
+                      Valuable nursing resources are tied up in initial assessments that could be streamlined through
+                      technology, reducing overall system efficiency.
+                    </p>
+                  </div>
+
+                  <div className="border-l-4 border-primary pl-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Stethoscope className="h-5 w-5 text-primary" />
+                      <h5 className="text-lg font-normal">Lack of Guidance for Uncertain Patients</h5>
+                    </div>
+                    <p className="text-muted-foreground">
+                      Patients arrive unsure of the urgency of their condition, with no pre-assessment tools to help
+                      them understand appropriate care pathways.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,7 +309,7 @@ export default function TechnishePage() {
           {toggles.solution && (
             <div className="space-y-8">
               <div className="text-center space-y-4">
-                <h4 className="text-2xl font-bold text-primary">AI-Powered Remote Triaging System</h4>
+                <h4 className="text-2xl font-bold text-primary mb-4">AI-Powered Remote Triaging System</h4>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   Co-founded TECHNISHE to design a remote triaging solution leveraging AI to optimize patient flow
                   before arrival. Focused on building a decision-support tool that could analyze patient input, predict
@@ -402,7 +435,7 @@ export default function TechnishePage() {
                 <div className="flex items-center gap-8 flex-1">
                   <h3 className="text-2xl font-normal section-heading">OUTCOMES & RECOGNITION</h3>
                 </div>
-                <span className="text-sm text-muted-foreground">MEASURABLE IMPACT</span>
+                <span className="text-sm text-muted-foreground">SIMULATION RESULTS & AWARDS</span>
               </>
             )}
           </div>
@@ -413,15 +446,15 @@ export default function TechnishePage() {
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div className="space-y-2">
                   <div className="stat-number text-4xl font-bold text-primary">5 hrs</div>
-                  <p className="text-muted-foreground">Triage Delay Reduction</p>
+                  <p className="text-muted-foreground">Projected Triage Reduction</p>
                 </div>
                 <div className="space-y-2">
                   <div className="stat-number text-4xl font-bold text-primary">10%</div>
-                  <p className="text-muted-foreground">Diagnostic Accuracy Increase</p>
+                  <p className="text-muted-foreground">Simulated Accuracy Improvement</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="stat-number text-4xl font-bold text-primary">$1M</div>
-                  <p className="text-muted-foreground">Investment Opportunities</p>
+                  <div className="stat-number text-4xl font-bold text-primary">1st</div>
+                  <p className="text-muted-foreground">Student Startup Award</p>
                 </div>
                 <div className="space-y-2">
                   <div className="stat-number text-4xl font-bold text-primary">200+</div>
@@ -430,19 +463,25 @@ export default function TechnishePage() {
               </div>
 
               <div className="bg-muted/30 p-8 rounded-lg">
-                <h4 className="text-xl font-bold text-primary mb-4">Recognition & Achievements</h4>
+                <h4 className="text-xl font-bold text-primary mb-4">Academic Recognition & Simulation Results</h4>
                 <div className="grid md:grid-cols-2 gap-6 text-sm">
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                       <span className="text-muted-foreground">
-                        <strong>Reduced triage delays by up to 5 hours</strong> in simulation testing
+                        <strong>Won 1st place in Student Startup Competition</strong> for healthcare innovation
                       </span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                       <span className="text-muted-foreground">
-                        <strong>Increased diagnostic accuracy by 10%</strong> in test groups
+                        <strong>Projected 5-hour triage delay reduction</strong> based on simulation modeling
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="text-muted-foreground">
+                        <strong>10% diagnostic accuracy improvement</strong> in controlled test scenarios
                       </span>
                     </div>
                   </div>
@@ -450,24 +489,69 @@ export default function TechnishePage() {
                     <div className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                       <span className="text-muted-foreground">
-                        Negotiated investment opportunities totaling <strong>$1M</strong> across public and private
-                        channels
+                        <strong>Academic recognition</strong> from healthcare innovation faculty and industry mentors
                       </span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                       <span className="text-muted-foreground">
-                        Selected for <strong>government pilot deployment phase</strong>
+                        <strong>Prototype validation</strong> through extensive medical professional consultation
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="text-muted-foreground">
+                        <strong>Featured in university startup showcase</strong> and healthcare innovation events
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="mt-4 text-center">
                   <p className="text-muted-foreground italic">
-                    Featured in startup competitions and healthcare innovation showcases
+                    Student-led healthcare innovation project with real-world simulation testing and academic
+                    recognition
                   </p>
                 </div>
               </div>
+            </div>
+          )}
+        </div>
+
+        {/* Demo Section */}
+        <div className={`${toggles.demo ? "py-12" : "py-4"}`}>
+          <div
+            className={`cursor-pointer hover:opacity-80 transition-opacity ${
+              toggles.demo ? "flex items-center justify-between mb-8" : "flex items-center justify-between py-4"
+            }`}
+            onClick={() => toggleSection("demo")}
+          >
+            {toggles.demo ? (
+              <>
+                <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                <ChevronUp className="h-5 w-5" />
+              </>
+            ) : (
+              <>
+                <div className="flex items-center gap-8 flex-1">
+                  <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                </div>
+                <span className="text-sm text-muted-foreground">SYSTEM SCREENSHOTS</span>
+              </>
+            )}
+          </div>
+          {toggles.demo && <div className="w-full h-px bg-border/30 mb-8"></div>}
+
+          {toggles.demo && (
+            <div className="space-y-8">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                <div key={num} className="relative">
+                  <img
+                    src={`/images/portfolio/triage(${num}).png`}
+                    alt={`Triage Demo ${num}`}
+                    className="w-full rounded-lg shadow-2xl"
+                  />
+                </div>
+              ))}
             </div>
           )}
         </div>
@@ -479,6 +563,85 @@ export default function TechnishePage() {
           <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
         </div>
       </footer>
+      {isContactOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background border border-border rounded-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setIsContactOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-light mb-2" style={{ color: "#b81202" }}>
+                  Let's Connect
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Ready to bring your vision to life? Get in touch and let's create something amazing together.
+                </p>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Mail size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm text-muted-foreground">manyakh8@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Phone size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Phone</p>
+                    <p className="text-sm text-muted-foreground">+34 636106843</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Location</p>
+                    <p className="text-sm text-muted-foreground">Madrid, Spain</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Linkedin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">www.linkedin.com/in/manya-khanna-7b5ab21a2/</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="flex gap-3">
+                {/* <Button
+                  className="flex-1 rounded-full"
+                  style={{ backgroundColor: "#b81202", color: "white" }}
+                  onClick={() => window.open("manyakh8@gmail.com")}
+                >
+                  Send Email
+                </Button> */}
+                <Button
+                  variant="outline"
+                  className="flex-1 rounded-full bg-transparent"
+                  onClick={() => setIsContactOpen(false)}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   )
 }

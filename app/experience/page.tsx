@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+import { useState } from "react"
+import { ArrowLeft, X, Mail, Phone, MapPin, Linkedin } from "lucide-react"
 
 const experiences = [
   {
@@ -221,6 +224,8 @@ const skillCategories = [
 ]
 
 export default function ExperiencePage() {
+  const [isContactOpen, setIsContactOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background font-sans">
       {/* Navigation */}
@@ -246,9 +251,12 @@ export default function ExperiencePage() {
               <Link href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Projects
               </Link>
-              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800"
-			  style={{ backgroundColor: "#b81202", color: "white" }}>
-                <Link href="/#contact">Contact</Link>
+              <Button
+                className="bg-gray-900 text-white hover:bg-gray-800"
+                style={{ backgroundColor: "#b81202", color: "white" }}
+                onClick={() => setIsContactOpen(true)}
+              >
+                Contact
               </Button>
             </div>
           </div>
@@ -323,7 +331,101 @@ export default function ExperiencePage() {
             ))}
           </div>
         </div>
+
+        {/* Call to Action */}
+        <section className="p-16 border-t border-gray-400">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-8">Start a project?</h2>
+            <Button
+              className="rounded-full px-6 py-2 hover:opacity-90"
+              style={{ backgroundColor: "#b81202", color: "white" }}
+              onClick={() => setIsContactOpen(true)}
+            >
+              {" "}
+              CONTACT ME
+            </Button>
+          </div>
+        </section>
       </div>
+
+      {isContactOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background border border-border rounded-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setIsContactOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-light mb-2" style={{ color: "#b81202" }}>
+                  Let's Connect
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Ready to bring your vision to life? Get in touch and let's create something amazing together.
+                </p>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Mail size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm text-muted-foreground">manyakh8@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Phone size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Phone</p>
+                    <p className="text-sm text-muted-foreground">+34 636106843</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Location</p>
+                    <p className="text-sm text-muted-foreground">Madrid, Spain</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Linkedin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">www.linkedin.com/in/manya-khanna-7b5ab21a2/</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="flex gap-3">
+                {/* <Button
+                  className="flex-1 rounded-full"
+                  style={{ backgroundColor: "#b81202", color: "white" }}
+                  onClick={() => window.open("manyakh8@gmail.com")}
+                >
+                  Send Email
+                </Button> */}
+                <Button
+                  variant="outline"
+                  className="flex-1 rounded-full bg-transparent"
+                  onClick={() => setIsContactOpen(false)}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

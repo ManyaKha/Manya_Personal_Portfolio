@@ -19,6 +19,8 @@ import {
   ChevronUp,
 } from "lucide-react"
 import { useEffect, useState } from "react"
+import { X, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
+
 
 export default function NewsAppPage() {
   const [toggles, setToggles] = useState({
@@ -39,6 +41,8 @@ export default function NewsAppPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -64,9 +68,12 @@ export default function NewsAppPage() {
               <Link href="/experience" className="text-muted-foreground hover:text-primary transition-colors">
                 Experience
               </Link>
-              <Button asChild
-              style={{ backgroundColor: "#b81202", color: "white" }}>
-                <Link href="/#contact">Contact</Link>
+              <Button
+                className="bg-gray-900 text-white hover:bg-gray-800"
+                style={{ backgroundColor: "#b81202", color: "white" }}
+                onClick={() => setIsContactOpen(true)}
+              >
+                Contact
               </Button>
             </div>
           </div>
@@ -100,7 +107,7 @@ export default function NewsAppPage() {
               </div>
               <div className="relative">
                 <img
-                  src="/financial-news-dashboard-interface-with-automated-.png"
+                  src="/images/portfolio/newsapp(1).png"
                   alt="NewsApp Financial News Automation Dashboard"
                   className="w-full rounded-lg shadow-2xl"
                 />
@@ -148,7 +155,7 @@ export default function NewsAppPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">6 months development</p>
-                    <p className="text-sm text-muted-foreground">Mar 2024 - Aug 2024</p>
+                    <p className="text-sm text-muted-foreground">Jun 2025 - Dec 2025</p>
                   </CardContent>
                 </Card>
 
@@ -160,8 +167,8 @@ export default function NewsAppPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">Solo Developer</p>
-                    <p className="text-sm text-muted-foreground">Full project creation/deployment</p>
+                    <p className="text-muted-foreground">2-Person Team</p>
+                    <p className="text-sm text-muted-foreground">Role- Full stack developer</p>
                   </CardContent>
                 </Card>
 
@@ -204,13 +211,13 @@ export default function NewsAppPage() {
           >
             {toggles.challenge ? (
               <>
-                <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
                 <ChevronUp className="h-5 w-5" />
               </>
             ) : (
               <>
                 <div className="flex items-center gap-8 flex-1">
-                  <h3 className="text-2xl font-normal section-heading">CHALLENGE</h3>
+                  <h3 className="text-2xl font-normal section-heading">PROBLEM</h3>
                 </div>
                 <span className="text-sm text-muted-foreground">MANUAL PROCESSES</span>
               </>
@@ -557,6 +564,46 @@ export default function NewsAppPage() {
             </div>
           )}
         </div>
+
+        {/* Demo Section */}
+        <div className={`${toggles.demo ? "py-12" : "py-4"}`}>
+          <div
+            className={`cursor-pointer hover:opacity-80 transition-opacity ${
+              toggles.demo ? "flex items-center justify-between mb-8" : "flex items-center justify-between py-4"
+            }`}
+            onClick={() => toggleSection("demo")}
+          >
+            {toggles.demo ? (
+              <>
+                <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                <ChevronUp className="h-5 w-5" />
+              </>
+            ) : (
+              <>
+                <div className="flex items-center gap-8 flex-1">
+                  <h3 className="text-2xl font-normal section-heading">DEMO</h3>
+                </div>
+                <span className="text-sm text-muted-foreground">SYSTEM IN ACTION</span>
+              </>
+            )}
+          </div>
+
+          {toggles.demo && (
+            <div className="space-y-8">
+              {[1,2].map((num) => (
+                <div key={num} className="relative">
+                  <img
+                    src={`/images/portfolio/newsapp(${num}).png`}
+                    alt={`Incus Demo ${num}`}
+                    className="w-full rounded-lg shadow-2xl"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
+        </div>
+
       </div>
 
       {/* Footer */}
@@ -565,6 +612,86 @@ export default function NewsAppPage() {
           <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
         </div>
       </footer>
+
+      {isContactOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background border border-border rounded-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setIsContactOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-light mb-2" style={{ color: "#b81202" }}>
+                  Let's Connect
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Ready to bring your vision to life? Get in touch and let's create something amazing together.
+                </p>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Mail size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm text-muted-foreground">manyakh8@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Phone size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Phone</p>
+                    <p className="text-sm text-muted-foreground">+34 636106843</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Location</p>
+                    <p className="text-sm text-muted-foreground">Madrid, Spain</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Linkedin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">www.linkedin.com/in/manya-khanna-7b5ab21a2/</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="flex gap-3">
+                {/* <Button
+                  className="flex-1 rounded-full"
+                  style={{ backgroundColor: "#b81202", color: "white" }}
+                  onClick={() => window.open("manyakh8@gmail.com")}
+                >
+                  Send Email
+                </Button> */}
+                <Button
+                  variant="outline"
+                  className="flex-1 rounded-full bg-transparent"
+                  onClick={() => setIsContactOpen(false)}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   )
 }

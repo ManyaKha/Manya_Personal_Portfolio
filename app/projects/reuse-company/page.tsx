@@ -3,8 +3,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Calendar, Users, TrendingUp, Code, Settings, Shield, ChevronUp, Zap, GitBranch } from "lucide-react"
+import { ArrowLeft, Calendar, Users, TrendingUp, Code, Settings, ChevronUp, Zap, GitBranch, Mail } from "lucide-react"
 import { useEffect, useState } from "react"
+import { X, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
 
 export default function ReuseCompanyPage() {
   const [toggles, setToggles] = useState({
@@ -25,6 +26,8 @@ export default function ReuseCompanyPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -50,9 +53,12 @@ export default function ReuseCompanyPage() {
               <Link href="/experience" className="text-muted-foreground hover:text-primary transition-colors">
                 Experience
               </Link>
-              <Button asChild
-              style={{ backgroundColor: "#b81202", color: "white" }}>
-                <Link href="/#contact">Contact</Link>
+              <Button
+                className="bg-gray-900 text-white hover:bg-gray-800"
+                style={{ backgroundColor: "#b81202", color: "white" }}
+                onClick={() => setIsContactOpen(true)}
+              >
+                Contact
               </Button>
             </div>
           </div>
@@ -251,17 +257,6 @@ export default function ReuseCompanyPage() {
                   <p className="text-muted-foreground">
                     SES and Visual Studio operated on different architectural foundations, requiring complex bridging
                     mechanisms to enable communication between the platforms.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-primary pl-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Zap className="h-5 w-5 text-primary" />
-                    <h5 className="text-lg font-normal">Real-time Synchronization</h5>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Maintaining real-time synchronization between code changes in both environments without conflicts or
-                    data loss was technically demanding.
                   </p>
                 </div>
 
@@ -580,196 +575,44 @@ export default function ReuseCompanyPage() {
                 <div className="flex items-center gap-8 flex-1">
                   <h3 className="text-2xl font-normal section-heading">DEMO</h3>
                 </div>
-                <span className="text-sm text-muted-foreground">INTEGRATION IN ACTION</span>
+                <span className="text-sm text-muted-foreground">FINAL THESIS PRESENTATION</span>
               </>
             )}
           </div>
+          {toggles.demo && <div className="w-full h-px bg-border/30 mb-8"></div>}
 
           {toggles.demo && (
             <div className="space-y-8">
               <div className="text-center space-y-4">
-                <h4 className="text-2xl font-bold text-primary">Integration in Action</h4>
+                <h4 className="text-2xl font-bold text-primary">Final Thesis Presentation</h4>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Experience the seamless workflow enabled by the Visual Studio-SES integration through key interface
-                  highlights and real-world functionality demonstrations.
+                  View the comprehensive presentation of my final thesis project showcasing the Visual Studio
+                  integration for SES.
                 </p>
               </div>
 
-              {/* Integration Dashboard */}
-              <div className="bg-muted/20 p-8 rounded-lg border border-border/30">
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <h5 className="text-xl font-normal mb-4">Integration Control Panel</h5>
-                    <div className="bg-background border border-border rounded-lg p-6 shadow-sm">
-                      <div className="grid grid-cols-4 gap-4 mb-6">
-                        <div className="text-center p-4 bg-primary/5 rounded-lg">
-                          <div className="text-2xl font-bold text-primary">Active</div>
-                          <div className="text-sm text-muted-foreground">Connection Status</div>
-                        </div>
-                        <div className="text-center p-4 bg-primary/5 rounded-lg">
-                          <div className="text-2xl font-bold text-primary">12</div>
-                          <div className="text-sm text-muted-foreground">Synced Projects</div>
-                        </div>
-                        <div className="text-center p-4 bg-primary/5 rounded-lg">
-                          <div className="text-2xl font-bold text-primary">Real-time</div>
-                          <div className="text-sm text-muted-foreground">Sync Mode</div>
-                        </div>
-                        <div className="text-center p-4 bg-primary/5 rounded-lg">
-                          <div className="text-2xl font-bold text-primary">0</div>
-                          <div className="text-sm text-muted-foreground">Sync Conflicts</div>
-                        </div>
-                      </div>
-                      <div className="text-center text-sm text-muted-foreground">
-                        Live integration status with automatic conflict resolution
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Key Features Demo */}
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="bg-background border border-border rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <GitBranch className="h-6 w-6 text-primary" />
-                      <h5 className="text-lg font-normal">Code Synchronization</h5>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex justify-between items-center p-3 bg-muted/30 rounded">
-                        <span>ProjectA.cs → SES Component</span>
-                        <span className="font-semibold text-green-600">Synced</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 bg-muted/30 rounded">
-                        <span>ModuleB.vb → SES Element</span>
-                        <span className="font-semibold text-green-600">Synced</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 bg-muted/30 rounded">
-                        <span>ConfigC.xml → SES Settings</span>
-                        <span className="font-semibold text-blue-600">Converting</span>
-                      </div>
-                    </div>
-                    <div className="mt-4 text-xs text-muted-foreground">
-                      Automatic bidirectional synchronization with real-time status
-                    </div>
-                  </div>
-
-                  <div className="bg-background border border-border rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Code className="h-6 w-6 text-primary" />
-                      <h5 className="text-lg font-normal">In-Tool Emulator</h5>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-gray-900 text-green-400 p-3 rounded font-mono text-xs">
-                        <div>Running validation tests...</div>
-                        <div>✓ Syntax check passed</div>
-                        <div>✓ Compatibility verified</div>
-                        <div>✓ Integration test successful</div>
-                      </div>
-                    </div>
-                    <div className="mt-4 text-xs text-muted-foreground">
-                      Built-in code emulation and testing within SES environment
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="bg-background border border-border rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Zap className="h-6 w-6 text-primary" />
-                      <h5 className="text-lg font-normal">Performance Metrics</h5>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>Sync Speed</span>
-                          <span className="font-semibold text-primary">Less than 1 second</span>
-                        </div>
-                        <div className="w-full h-2 bg-muted rounded-full">
-                          <div className="w-full h-2 bg-primary rounded-full"></div>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>Accuracy Rate</span>
-                          <span className="font-semibold text-primary">99.9%</span>
-                        </div>
-                        <div className="w-full h-2 bg-muted rounded-full">
-                          <div className="w-full h-2 bg-primary rounded-full"></div>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>Uptime</span>
-                          <span className="font-semibold text-primary">99.8%</span>
-                        </div>
-                        <div className="w-full h-2 bg-muted rounded-full">
-                          <div className="w-full h-2 bg-primary rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-4 text-xs text-muted-foreground">
-                      Real-time performance monitoring and optimization
-                    </div>
-                  </div>
-
-                  <div className="bg-background border border-border rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Settings className="h-6 w-6 text-primary" />
-                      <h5 className="text-lg font-normal">Activity Log</h5>
-                    </div>
-                    <div className="space-y-2 text-xs">
-                      <div className="flex justify-between items-center p-2 bg-muted/30 rounded">
-                        <span>Code sync completed - ProjectA</span>
-                        <span className="text-muted-foreground">1 min ago</span>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-muted/30 rounded">
-                        <span>Validation passed - ModuleB</span>
-                        <span className="text-muted-foreground">3 min ago</span>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-muted/30 rounded">
-                        <span>Integration test successful</span>
-                        <span className="text-muted-foreground">5 min ago</span>
-                      </div>
-                    </div>
-                    <div className="mt-4 text-xs text-muted-foreground">
-                      Comprehensive activity tracking for debugging and auditing
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Integration Benefits */}
-              <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                <h5 className="text-lg font-normal text-primary mb-4">Live Integration Benefits</h5>
-                <div className="grid md:grid-cols-3 gap-6 text-sm">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Shield className="h-6 w-6 text-primary" />
-                    </div>
-                    <h6 className="font-normal mb-2">Reliable & Stable</h6>
+              <div className="bg-muted/30 p-8 rounded-lg border border-border/30">
+                <div className="text-center space-y-6">
+                  <div className="space-y-2">
+                    <h5 className="text-xl font-normal text-primary">Interactive Demo Available</h5>
                     <p className="text-muted-foreground">
-                      Enterprise-grade reliability with automatic error recovery and conflict resolution
+                      The complete demonstration of the Visual Studio integration is available in my thesis
+                      presentation. Navigate to <strong>page 20</strong> to view the interactive demo and technical
+                      implementation details.
                     </p>
                   </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Users className="h-6 w-6 text-primary" />
-                    </div>
-                    <h6 className="font-normal mb-2">Developer Friendly</h6>
-                    <p className="text-muted-foreground">
-                      Intuitive interface that feels native to both SES and Visual Studio environments
-                    </p>
+
+                  <div className="pt-4">
+                    <Button asChild className="bg-primary hover:bg-primary/90 text-white px-8 py-3">
+                      <Link href="https://vs-in-ses.my.canva.site/" target="_blank" rel="noopener noreferrer">
+                        View Thesis Presentation
+                      </Link>
+                    </Button>
                   </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Zap className="h-6 w-6 text-primary" />
-                    </div>
-                    <h6 className="font-normal mb-2">High Performance</h6>
-                    <p className="text-muted-foreground">
-                      Lightning-fast synchronization with minimal resource overhead and optimal efficiency
-                    </p>
-                  </div>
+
+                  <p className="text-sm text-muted-foreground italic">
+                    Demo content is located on page 20 of the presentation
+                  </p>
                 </div>
               </div>
             </div>
@@ -783,6 +626,87 @@ export default function ReuseCompanyPage() {
           <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
         </div>
       </footer>
+
+      {isContactOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background border border-border rounded-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setIsContactOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-light mb-2" style={{ color: "#b81202" }}>
+                  Let's Connect
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Ready to bring your vision to life? Get in touch and let's create something amazing together.
+                </p>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Mail size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm text-muted-foreground">manyakh8@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Phone size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Phone</p>
+                    <p className="text-sm text-muted-foreground">+34 636106843</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MapPin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">Location</p>
+                    <p className="text-sm text-muted-foreground">Madrid, Spain</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Linkedin size={18} style={{ color: "#b81202" }} />
+                  <div>
+                    <p className="text-sm font-medium">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">www.linkedin.com/in/manya-khanna-7b5ab21a2/</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-border/30"></div>
+
+              <div className="flex gap-3">
+                {/* <Button
+                  className="flex-1 rounded-full"
+                  style={{ backgroundColor: "#b81202", color: "white" }}
+                  onClick={() => window.open("manyakh8@gmail.com")}
+                >
+                  Send Email
+                </Button> */}
+                <Button
+                  variant="outline"
+                  className="flex-1 rounded-full bg-transparent"
+                  onClick={() => setIsContactOpen(false)}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+
     </div>
   )
 }
