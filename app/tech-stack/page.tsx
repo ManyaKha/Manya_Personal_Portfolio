@@ -1,7 +1,5 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ArrowLeft } from "lucide-react"
 
 const techStackData = {
@@ -46,12 +44,60 @@ const techStackData = {
   "Tools & Others": ["VS Code", "Postman", "Figma", "Jira", "Slack", "Notion", "Linux", "macOS", "Windows"],
 }
 
+const skillCategories = [
+  {
+    category: "Languages & Frameworks",
+    skills: [
+      "Back-End: .NET Core, .NET Framework, C#, Go, PHP, Python, Java, Kotlin",
+      "Front-End: Angular, React Native, JavaScript, Visual Basic, WPF, MVVM",
+      "UI/UX Design: Figma, Blender, Canva",
+    ],
+  },
+  {
+    category: "Database Technologies",
+    skills: [
+      "Relational: MySQL, Oracle, PostgreSQL, SQL Server, SQLite",
+      "Non-Relational: MongoDB, Firebase realtime database, Cassandra",
+      "Graph Database: Neo4j",
+      "PowerQuery",
+    ],
+  },
+  {
+    category: "Platforms & Tools",
+    skills: [
+      "Development: Visual Studio, Visual Studio Code, TortoiseSVN, Eclipse, IntelliJ IDEA, DataGrip, Flutter, Unity, Expo",
+      "Project Management: Jira, Confluence, Notion",
+      "Analytics & Reporting: Power BI",
+      "Design: Figma, Blender, Canva",
+      "Collaboration: Notion, Jira",
+    ],
+  },
+  {
+    category: "DevOps & Cloud",
+    skills: [
+      "Version Control: Git, GitHub, GitLab, Azure DevOps, TortoiseSVN",
+      "Cloud Tools: AWS, Azure, GCP",
+      "Microservices Development: RabbitMQ",
+    ],
+  },
+  {
+    category: "Additional Skills",
+    skills: [
+      "Technical Skills: API Development (RESTful and GraphQL), Automated testing with Selenium and JUnit",
+      "Product Development: Strong experience designing and launching digital products",
+      "Leadership & Management: Proven ability to lead teams and manage projects efficiently",
+      "Digital Marketing: Skills in brand building, SEO, and running e-commerce platforms",
+      "Content Creation: Expertise in creating compelling marketing and product content",
+    ],
+  },
+]
+
 export default function TechStackPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-sans">
       {/* Navigation */}
       <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-5xl mx-auto px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm" asChild>
@@ -63,16 +109,17 @@ export default function TechStackPage() {
               <div className="font-heading font-bold text-xl text-foreground">Tech Stack</div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Home
               </Link>
-              <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Projects
               </Link>
-              <Link href="/experience" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Experience
               </Link>
-              <Button asChild>
+              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800"
+			  style={{ backgroundColor: "#b81202", color: "white" }}>
                 <Link href="/#contact">Contact</Link>
               </Button>
             </div>
@@ -80,127 +127,43 @@ export default function TechStackPage() {
         </div>
       </nav>
 
-      {/* Header Section */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-6">Technology Stack</h1>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            A comprehensive overview of the technologies, frameworks, and tools I use to build modern, scalable
-            applications. From frontend frameworks to cloud infrastructure, here's what powers my development workflow.
-          </p>
-        </div>
-      </section>
+      {/* Main Content Container */}
+      <div className="max-w-5xl mx-auto min-h-screen">
+        {/* Skills Overview */}
+        <section className="p-16 border-gray-400">
+          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-4">Technical Expertise</h2>
 
-      {/* Tech Stack Grid */}
-      <section className="py-8 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid gap-8">
-            {Object.entries(techStackData).map(([category, technologies]) => (
-              <Card key={category} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="font-heading text-2xl text-foreground">{category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-3">
-                    {technologies.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                      >
-                        {tech}
-                      </Badge>
+          {/* Left Column - Content */}
+          <div>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              My technical expertise spans full-stack development, with deep experience in enterprise software, fintech
+              solutions, and AI-powered applications. I specialize in building scalable systems that bridge complex
+              business requirements with user-friendly interfaces.
+            </p>
+
+            <div className="space-y-6">
+              {skillCategories.map((category, index) => (
+                <div key={index}>
+                  <h4 className="font-semibold text-gray-900 mb-2">{category.category}</h4>
+                  <div className="text-sm text-gray-600 space-y-1">
+                    {category.skills.map((skill, skillIndex) => (
+                      <p key={skillIndex}>{skill}</p>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Level Section */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl text-center mb-12">Proficiency Levels</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-xl text-primary">Expert</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">Technologies I use daily and have deep expertise in</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">JavaScript</Badge>
-                  <Badge variant="outline">TypeScript</Badge>
-                  <Badge variant="outline">React</Badge>
-                  <Badge variant="outline">Next.js</Badge>
-                  <Badge variant="outline">Node.js</Badge>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-xl text-secondary">Proficient</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Technologies I work with regularly and am comfortable using
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Python</Badge>
-                  <Badge variant="outline">PostgreSQL</Badge>
-                  <Badge variant="outline">AWS</Badge>
-                  <Badge variant="outline">Docker</Badge>
-                  <Badge variant="outline">MongoDB</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-xl text-muted-foreground">Familiar</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">Technologies I have experience with and continue to learn</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Java</Badge>
-                  <Badge variant="outline">C++</Badge>
-                  <Badge variant="outline">Kubernetes</Badge>
-                  <Badge variant="outline">Azure</Badge>
-                  <Badge variant="outline">Django</Badge>
-                </div>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Call to Action */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading font-bold text-3xl mb-6">Ready to Build Something Amazing?</h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Let's discuss how these technologies can bring your project to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link href="/projects">View My Projects</Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/#contact">Get In Touch</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border py-8 px-6">
-        <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
-        </div>
-      </footer>
+        {/* Call to Action */}
+        <section className="p-16 border-t border-gray-400">
+          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-8">Start a project?</h2>
+          <Button asChild className="bg-gray-900 text-white hover:bg-gray-800">
+            <Link href="mailto:manyakh8@gmail.com">CONTACT ME</Link>
+          </Button>
+        </section>
+      </div>
     </div>
   )
 }

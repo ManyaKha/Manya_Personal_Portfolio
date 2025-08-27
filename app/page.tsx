@@ -4,30 +4,31 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
-import { X, Mail, Phone, MapPin, Linkedin } from "lucide-react"
+import { X, Mail, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react"
 
 export default function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false)
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-sans">
       <div className="max-w-5xl mx-auto p-6">
         {/* Header Section */}
-        <div className="py-12 border-b border-border/20">
-          <div className="grid grid-cols-3 gap-8 items-center">
+        <div className="py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Left Column: Text Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 text-center lg:text-left">
               <p className="text-lg">Hey, I'm Manya Khanna</p>
-              <h1 className="text-4xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                 <span style={{ color: "#b81202" }}>A Software Developer</span> <br />
                 <span className="italic font-medium" style={{ color: "#b81202" }}>
                   & Data Workflow Arquitect
                 </span>{" "}
                 <br />
-                {/* <span style={{ color: "#b81202" }}>Manager</span> */}
               </h1>
-              <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              I build end-to-end digital products that blend clean engineering with intuitive design. With experience leading fintech, healthtech, and SaaS projects, I bridge code, data, and user experience—turning complex workflows into scalable, user-friendly solutions.
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
+                I build end-to-end digital products that blend clean engineering with intuitive design. With experience
+                leading fintech, healthtech, and SaaS projects, I bridge code, data, and user experience—turning complex
+                workflows into scalable, user-friendly solutions.
               </p>
               <Button
                 className="rounded-full px-6 py-2 hover:opacity-90"
@@ -39,8 +40,8 @@ export default function HomePage() {
             </div>
 
             {/* Center Column: Image */}
-            <div className="flex justify-center relative">
-              <div className="w-96 relative overflow-hidden rounded-lg bg-muted border-slate-600 h-[400px] border-0 shadow-sm">
+            <div className="flex justify-center relative order-first lg:order-none">
+              <div className="w-64 sm:w-80 lg:w-96 relative overflow-hidden rounded-lg bg-muted border-slate-600 h-[300px] sm:h-[350px] lg:h-[400px] border-0 shadow-sm">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Manya_Khanna_CV.jpg-Gj8gEvwuSQlOSaFEUFnsFCeY04NoaS.jpeg"
                   alt="Professional headshot"
@@ -50,21 +51,29 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Stats */}
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center lg:text-left lg:pl-8">
               <div>
-                <div className="stat-number text-3xl font-bold">5+</div>
+                <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
+                  5+
+                </div>
                 <p className="text-sm text-muted-foreground">Years Experience</p>
               </div>
               <div>
-                <div className="stat-number text-3xl font-bold">3+</div>
+                <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
+                  3+
+                </div>
                 <p className="text-sm text-muted-foreground">Projects in Development</p>
               </div>
               <div>
-                <div className="stat-number text-3xl font-bold">2-4</div>
+                <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
+                  2-4
+                </div>
                 <p className="text-sm text-muted-foreground">Features shipped/Sprint</p>
               </div>
               <div>
-                <div className="stat-number text-3xl font-bold">13+</div>
+                <div className="stat-number text-3xl font-bold" style={{ color: "#002147" }}>
+                  13+
+                </div>
                 <p className="text-sm text-muted-foreground">Software issues resolved/Week</p>
               </div>
             </div>
@@ -72,25 +81,33 @@ export default function HomePage() {
         </div>
 
         {/* Services Section */}
-        <div className="py-12 border-b border-border/20">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center space-y-3">
-              <h3 className="font-heading font-bold text-sm tracking-wider">FULL-STACK DEVELOPMENT</h3>
+        <div className="py-12">
+          <div className="grid md:grid-cols-4 gap-8 items-stretch">
+            <div className="text-center space-y-3 flex flex-col h-full">
+              <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
+                FULL-STACK DEVELOPMENT
+              </h3>
               <div className="w-full h-px bg-border/30"></div>
               <p className="text-xs text-muted-foreground">End-to-end web applications tailored for your audience.</p>
             </div>
-            <div className="text-center space-y-3">
-              <h3 className="font-heading font-bold text-sm tracking-wider">API DESIGN & INTEGRATION</h3>
+            <div className="text-center space-y-3 flex flex-col h-full">
+              <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
+                API DESIGN & INTEGRATION
+              </h3>
               <div className="w-full h-px bg-border/30"></div>
               <p className="text-xs text-muted-foreground">Robust backend systems and third-party integrations.</p>
             </div>
-            <div className="text-center space-y-3">
-              <h3 className="font-heading font-bold text-sm tracking-wider">RESPONSIVE & MODERN UI</h3>
+            <div className="text-center space-y-3 flex flex-col h-full">
+              <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
+                RESPONSIVE & MODERN UI
+              </h3>
               <div className="w-full h-px bg-border/30"></div>
               <p className="text-xs text-muted-foreground">Mobile-first design principles for all devices.</p>
             </div>
-            <div className="text-center space-y-3">
-              <h3 className="font-heading font-bold text-sm tracking-wider">PERFORMANCE OPTIMIZATION</h3>
+            <div className="text-center space-y-3 flex flex-col h-full">
+              <h3 className="font-heading font-bold text-sm tracking-wider min-h-[2.5rem] flex items-center justify-center">
+                PERFORMANCE OPTIMIZATION
+              </h3>
               <div className="w-full h-px bg-border/30"></div>
               <p className="text-xs text-muted-foreground">Fast, scalable applications with modern development.</p>
             </div>
@@ -98,10 +115,10 @@ export default function HomePage() {
         </div>
 
         {/* About Section */}
-        <div className="py-12 border-b border-border/20">
+        <div className="py-12">
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
-              <h2 className="section-heading mb-6">
+              <h2 className="text-3xl lg:text-4xl font-light mb-6">
                 CRAFTING MEANINGFUL
                 <br />
                 APPLICATIONS & INTUITIVE
@@ -110,7 +127,6 @@ export default function HomePage() {
               </h2>
             </div>
             <div className="space-y-4">
-              <div className="w-full h-px bg-border/30 mb-6"></div>
               <p className="text-muted-foreground">
                 Hey, I'm a software developer passionate about creating robust and user-friendly digital experiences.
               </p>
@@ -126,17 +142,22 @@ export default function HomePage() {
         </div>
 
         {/* Tech Stack Section */}
-        <div className="py-12 border-b border-border/20">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="section-heading">TECH STACK</h2>
-            <Button variant="outline" asChild className="rounded-full bg-transparent">
-              <Link href="/tech-stack">View All</Link>
-            </Button>
+        <div className="py-12">
+          <div className="flex items-center gap-6 mb-8">
+            <h2 className="text-3xl lg:text-4xl font-light">TECH STACK</h2>
+            <Link
+              href="/tech-stack"
+              className="inline-flex items-center text-sm hover:translate-x-1 transform transition-transform duration-200"
+              style={{ color: "#b81202" }}
+            >
+              <span className="mr-2">View All</span>
+              <ArrowRight className="w-6 h-6" />
+            </Link>
           </div>
           <div className="w-full h-px bg-border/30 mb-8"></div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            <div>
+            <div className="border-r border-border/20 pr-6">
               <h3 className="font-heading font-bold text-sm mb-3 tracking-wider">LANGUAGES</h3>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">JavaScript</Badge>
@@ -144,7 +165,7 @@ export default function HomePage() {
                 <Badge variant="outline">Python</Badge>
               </div>
             </div>
-            <div>
+            <div className="border-r border-border/20 pr-6 pl-6">
               <h3 className="font-heading font-bold text-sm mb-3 tracking-wider">FRAMEWORKS</h3>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">React</Badge>
@@ -152,7 +173,7 @@ export default function HomePage() {
                 <Badge variant="outline">Node.js</Badge>
               </div>
             </div>
-            <div>
+            <div className="border-r border-border/20 pr-6 pl-6">
               <h3 className="font-heading font-bold text-sm mb-3 tracking-wider">DATABASES</h3>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">PostgreSQL</Badge>
@@ -160,7 +181,7 @@ export default function HomePage() {
                 <Badge variant="outline">Redis</Badge>
               </div>
             </div>
-            <div>
+            <div className="pl-6">
               <h3 className="font-heading font-bold text-sm mb-3 tracking-wider">CLOUD & DEVOPS</h3>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">AWS</Badge>
@@ -172,12 +193,17 @@ export default function HomePage() {
         </div>
 
         {/* Projects Section */}
-        <div className="py-12 border-b border-border/20">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="section-heading">PROJECTS</h2>
-            <Button variant="outline" asChild className="rounded-full bg-transparent">
-              <Link href="/projects">View All</Link>
-            </Button>
+        <div className="py-12">
+          <div className="flex items-center gap-6 mb-8">
+            <h2 className="text-3xl lg:text-4xl font-light">PROJECTS</h2>
+            <Link
+              href="/projects"
+              className="inline-flex items-center text-sm hover:translate-x-1 transform transition-transform duration-200"
+              style={{ color: "#b81202" }}
+            >
+              <span className="mr-2">View All</span>
+              <ArrowRight className="w-6 h-6" />
+            </Link>
           </div>
           <div className="w-full h-px bg-border/30 mb-8"></div>
 
@@ -185,7 +211,6 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-3 gap-1">
               <div className="space-y-4 border-r border-border/20 pr-6">
                 <h3 className="font-heading font-bold text-lg">INCUS CAPITAL</h3>
-                <div className="w-full h-px bg-border/30"></div>
                 <p className="text-sm text-muted-foreground">
                   Comprehensive fintech platform with real-time analytics and portfolio management.
                 </p>
@@ -205,9 +230,8 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <div className="space-y-4 border-r border-border/20 pr-6">
+              <div className="space-y-4 border-r border-border/20 pr-6 pl-6">
                 <h3 className="font-heading font-bold text-lg">TECNISHE - VIRTUAL TRIAJE</h3>
-                <div className="w-full h-px bg-border/30"></div>
                 <p className="text-sm text-muted-foreground">
                   AI-powered virtual triage system for healthcare providers.
                 </p>
@@ -227,9 +251,8 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 pl-6">
                 <h3 className="font-heading font-bold text-lg">NEWS-APP</h3>
-                <div className="w-full h-px bg-border/30"></div>
                 <p className="text-sm text-muted-foreground">
                   Modern news aggregation platform with personalized feeds.
                 </p>
@@ -254,18 +277,22 @@ export default function HomePage() {
 
         {/* Experience Section */}
         <div className="py-12">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="section-heading">EXPERIENCE</h2>
-            <Button variant="outline" asChild className="rounded-full bg-transparent">
-              <Link href="/experience">View All</Link>
-            </Button>
+          <div className="flex items-center gap-6 mb-8">
+            <h2 className="text-3xl lg:text-4xl font-light">EXPERIENCE</h2>
+            <Link
+              href="/experience"
+              className="inline-flex items-center text-sm hover:translate-x-1 transform transition-transform duration-200"
+              style={{ color: "#b81202" }}
+            >
+              <span className="mr-2">View All</span>
+              <ArrowRight className="w-6 h-6" />
+            </Link>
           </div>
           <div className="w-full h-px bg-border/30 mb-8"></div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-heading font-bold text-lg mb-4 tracking-wider">RECENT POSITIONS</h3>
-              <div className="w-full h-px bg-border/30 mb-6"></div>
               <div className="space-y-6">
                 <div className="border-l-2 border-foreground pl-4">
                   <h4 className="font-heading font-bold text-sm">SENIOR FULL STACK DEVELOPER</h4>
@@ -284,7 +311,6 @@ export default function HomePage() {
 
             <div>
               <h3 className="font-heading font-bold text-lg mb-4 tracking-wider">CORE COMPETENCIES</h3>
-              <div className="w-full h-px bg-border/30 mb-6"></div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-sm">Full Stack Development</span>
@@ -320,7 +346,7 @@ export default function HomePage() {
 
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold mb-2" style={{ color: "#b81202" }}>
+                <h2 className="text-3xl lg:text-4xl font-light mb-2" style={{ color: "#b81202" }}>
                   Let's Connect
                 </h2>
                 <p className="text-muted-foreground text-sm">

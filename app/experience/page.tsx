@@ -1,98 +1,231 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, MapPin, Calendar, Building } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 
 const experiences = [
   {
     company: "INCUS CAPITAL",
-    position: "Senior Full Stack Developer",
+    position: "SOFTWARE PROJECT LEAD",
     location: "Madrid, Spain",
-    duration: "Jan 2024 - Present",
+    duration: "Dec 2023 - Present",
     type: "Full-time",
     description:
-      "Leading the development of a comprehensive fintech platform for investment management and portfolio tracking. Architected scalable solutions handling real-time financial data for institutional and retail investors.",
+      "I conducted a comprehensive analysis of the company's operations and requirements to design a customized fintech software solution tailored to their needs. Leveraging Agile methodology, I led the software development lifecycle, ensuring iterative progress and team collaboration for timely delivery.",
     achievements: [
-      "Built real-time portfolio tracking system serving 500+ active users",
-      "Implemented secure payment processing with 99.9% uptime",
-      "Reduced API response times by 60% through optimization",
-      "Led team of 4 developers in agile development practices",
+      "Database Development: Designed and implemented a robust MySQL database, including an engine to efficiently import and process data from Excel files directly into the system",
+      "UI/UX Design: Developed an intuitive and user-friendly interface for the web application, prioritizing functionality and user experience",
+      "Full-Stack Development: Built the web application using Angular for the front-end and C# for the back-end, ensuring seamless integration and performance",
+      "Testing Environment: Established a dedicated testing environment and developed test cases to ensure high code quality and functionality",
+      "Cybersecurity Oversight: Managed all IT-related functions, including the implementation and maintenance of up-to-date cybersecurity measures to safeguard company data and systems",
     ],
-    technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "AWS", "Redis"],
+    technologies: [
+      ".NET Core",
+      "C#",
+      "Angular",
+      "MySQL",
+      "SQLite",
+      "SQL Server",
+      "PowerQuery",
+      "Visual Studio",
+      "Visual Studio Code",
+      "IntelliJ IDEA",
+      "DataGrip",
+      "Figma",
+      "Notion",
+      "RabbitMQ",
+    ],
   },
   {
-    company: "REUSE COMPANY",
-    position: "Full Stack Developer",
-    location: "Barcelona, Spain",
-    duration: "Jun 2023 - Dec 2023",
+    company: "THE REUSE COMPANY",
+    position: "Software Developer",
+    location: "Madrid, Spain",
+    duration: "Jul 2021 - Feb 2023",
     type: "Full-time",
     description:
-      "Developed sustainable technology solutions focused on circular economy principles. Built web applications for waste management and resource optimization systems.",
+      "As a developer on the commercial tool SES, I contributed to enhancing the software by developing and extending its features and creating new functionalities tailored to client needs.",
     achievements: [
-      "Created waste tracking system reducing processing time by 40%",
-      "Implemented IoT integration for real-time monitoring",
-      "Developed mobile-responsive dashboard for field operations",
-      "Collaborated with sustainability experts on green tech initiatives",
+      "Visual Studio Integration: Designed and implemented a seamless connection between SES and Visual Studio, including a code emulator within SES",
+      "Enabled the retrieval of all project components from Visual Studio and converted them into elements compatible with SES",
+      "Developed functionality to create and edit project components directly within SES, with changes automatically saved to Visual Studio",
+      "Error Analysis and Build Features: Implemented a build feature in SES capable of analyzing projects and providing detailed error reports related to project classes",
+      "Documentation: Played a key role in creating comprehensive documentation for the code algorithms, ensuring clarity and ease of understanding for future developers and users",
     ],
-    technologies: ["Vue.js", "Node.js", "MongoDB", "Docker", "IoT"],
+    technologies: [
+      ".NET Framework",
+      "C#",
+      "Visual Basic",
+      "WPF",
+      "MVVM",
+      "Visual Studio",
+      "Tortoise",
+      "Jira",
+      "Oracle",
+      "MongoDB",
+      "PowerQuery",
+    ],
+  },
+  {
+    company: "TECNISHE",
+    position: "CO-FOUNDER",
+    location: "Madrid, Spain",
+    duration: "Jul 2021 - Feb 2023",
+    type: "Full-time",
+    description:
+      "Emergency rooms have long waiting times. Triaging is not efficient with the current demand, so we developed a remote triaging solution for patients that uses AI.",
+    achievements: [
+      "Cut hospital wait times by 5 hours – Spearheaded product development of medical SaaS using GPT-4 and LLM's, resulting in patients to self assess and redirect to telehealth services, optimizing patient flow and reducing hospital congestion",
+      "Conducted 200+ interviews – Formed key B2B and B2H partnerships with 2 telehealth companies, a public hospital, and Government Innovation Hub, addressing patient pains and prototyping features with Flutter and Figma ensuring user centric designs and functionality",
+      "Boosted diagnosis accuracy by 10% – Trained machine learning models with Python using Pandas and NumPy to perform data analysis on 100+ patient data sets, improving patient prioritization and emergency room flow",
+      "Negotiated investments up to 1 million dollars – Closed investments of more than $13,000 with investors, incubator programs, and winning startup competitions",
+    ],
+    technologies: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Flutter",
+      "Figma",
+      "Blender",
+      "Notion",
+      "Canva",
+      "Visual Studio Code",
+      "IntelliJ IDEA",
+      "MySQL",
+      "SQL Server",
+      "PowerQuery",
+    ],
   },
   {
     company: "HAVAS",
-    position: "Frontend Developer",
+    position: "INTERNATIONAL IT DEPARTMENT",
     location: "Madrid, Spain",
-    duration: "Mar 2022 - May 2023",
+    duration: "Apr 2021 - Aug 2021",
     type: "Full-time",
     description:
-      "Worked on digital marketing campaigns and interactive web experiences for major international brands. Focused on creating engaging, performance-optimized frontend solutions.",
+      "Collaborated closely with the Lead Jira Projects Administrator to manage, troubleshoot, and streamline multiple Jira projects created by various departmental branches located across different countries.",
     achievements: [
-      "Delivered 15+ high-profile campaign websites",
-      "Improved page load speeds by 45% across all projects",
-      "Implemented accessibility standards achieving WCAG AA compliance",
-      "Mentored 2 junior developers in modern frontend practices",
+      "Jira Projects Support: Worked extensively as technical support, assisting and training employees in creating and executing agile projects using Jira",
+      "Power BI Implementation: Completed an intensive Power BI course and led the implementation of the tool to collect, analyze, and visualize financial data from multiple departments",
+      "Database Redesign: Redesigned the database structure to efficiently handle and organize information for Havas employees. Additionally, wrote and executed scripts to successfully implement the redesigned database into Havas systems",
+      "These contributions enhanced cross-departmental collaboration, improved data accessibility, and streamlined project management workflows",
     ],
-    technologies: ["React", "JavaScript", "Sass", "Webpack", "Adobe Creative Suite"],
+    technologies: ["Jira", "Confluence", "PowerBI", "Oracle", "PowerQuery"],
   },
   {
     company: "GLOBAL INCUBATOR",
-    position: "Junior Full Stack Developer",
+    position: "FRONT-END DEVELOPMENT",
     location: "Madrid, Spain",
-    duration: "Sep 2021 - Feb 2022",
+    duration: "Aug 2020 - Feb 2021",
     type: "Full-time",
     description:
-      "Supported startup development within a technology incubator environment. Built MVPs and prototypes for various early-stage companies across different industries.",
+      "Primarily worked with React Native on the front-end, focusing on developing new functionalities and enhancing existing features to improve user experience and performance.",
     achievements: [
-      "Developed 8+ MVP applications for startup portfolio",
-      "Implemented rapid prototyping workflows reducing development time by 30%",
-      "Contributed to technical due diligence for investment decisions",
-      "Gained experience across fintech, healthtech, and e-commerce domains",
+      "Project Contributions: Contributed to the development and improvement of websites such as VisionApp, VC Land, and GI4L, collaborating with teams to deliver high-quality, user-focused solutions",
+      "Enhanced user experience and performance through feature improvements",
+      "Gained experience in startup environment and rapid development cycles",
     ],
-    technologies: ["React", "Node.js", "Express", "MySQL", "AWS"],
+    technologies: ["React Native", "JavaScript", "PHP", "Python"],
   },
   {
-    company: "DEPARTAMENTO DE LABORATORIO DE INFORMATICO (UC3M)",
-    position: "Research Assistant & Developer",
+    company: "DEPARTAMENTO DE LABORATORIO DE INFORMÁTICA (UC3M)",
+    position: "SOFTWARE ENGINEER",
     location: "Madrid, Spain",
-    duration: "Jan 2021 - Aug 2021",
+    duration: "2018 - 2019",
     type: "Part-time",
     description:
-      "Conducted research in computer science and software engineering while pursuing academic studies. Developed educational tools and research applications for the university.",
+      "Managed the computer labs for the Computer Science and Engineering Department at UC3M, ensuring all systems were maintained, updated, and functional for students and faculty.",
     achievements: [
-      "Published 2 research papers on software engineering methodologies",
-      "Developed educational platform used by 200+ students",
-      "Contributed to open-source academic projects",
-      "Assisted in teaching programming fundamentals to undergraduate students",
+      "Project Development: Designed and developed a web application for the department to enhance organization and streamline workflows, contributing to improved efficiency in daily operations",
+      "Webpage Migration: Led the migration of a webpage from Go to React Native, modernizing the technology stack and improving functionality",
+      "Maintained and updated all computer lab systems for students and faculty",
     ],
-    technologies: ["Python", "Java", "C++", "PostgreSQL", "Git"],
+    technologies: ["React Native", "Go", "Java", "C#", "Python", "MySQL", "SQL Server"],
+  },
+  {
+    company: "INDEPENDENT ENGLISH TEACHER",
+    position: "English Language Instructor",
+    location: "Madrid, Spain",
+    duration: "Sept 2017 - 2022",
+    type: "Part-time",
+    description:
+      "Trained students to prepare for advanced English proficiency exams such as TOEFL, IELTS, and Cambridge Assessment, focusing on exam strategies and skill-building.",
+    achievements: [
+      "Language Coaching: Guided students in improving grammar, vocabulary, and fluency in both spoken and written English",
+      "Personalized Support: Provided tailored feedback and practice sessions to address individual strengths and areas for improvement, ensuring success in their exams",
+      "Developed customized learning materials and assessment strategies for diverse student needs",
+    ],
+    technologies: [],
+  },
+]
+
+const education = [
+  {
+    degree: "Minor in Computer Science and Major Computer Engineering",
+    institution: "Universidad Carlos III de Madrid",
+    duration: "2016 - 2022",
+    type: "Bachelor's Degree",
+  },
+  {
+    degree: "International Baccalaureate - High Level in Physics, Chemistry and English",
+    institution: "American School of Madrid",
+    duration: "2016",
+    type: "High School",
+  },
+]
+
+const skillCategories = [
+  {
+    category: "Languages & Frameworks",
+    skills: [
+      "Back-End: .NET Core, .NET Framework, C#, Go, PHP, Python, Java, Kotlin",
+      "Front-End: Angular, React Native, JavaScript, Visual Basic, WPF, MVVM",
+      "UI/UX Design: Figma, Blender, Canva",
+    ],
+  },
+  {
+    category: "Database Technologies",
+    skills: [
+      "Relational: MySQL, Oracle, PostgreSQL, SQL Server, SQLite",
+      "Non-Relational: MongoDB, Firebase realtime database, Cassandra",
+      "Graph Database: Neo4j",
+      "PowerQuery",
+    ],
+  },
+  {
+    category: "Platforms & Tools",
+    skills: [
+      "Development: Visual Studio, Visual Studio Code, TortoiseSVN, Eclipse, IntelliJ IDEA, DataGrip, Flutter, Unity, Expo",
+      "Project Management: Jira, Confluence, Notion",
+      "Analytics & Reporting: Power BI",
+      "Design: Figma, Blender, Canva",
+      "Collaboration: Notion, Jira",
+    ],
+  },
+  {
+    category: "DevOps & Cloud",
+    skills: [
+      "Version Control: Git, GitHub, GitLab, Azure DevOps, TortoiseSVN",
+      "Cloud Tools: AWS, Azure, GCP",
+      "Microservices Development: RabbitMQ",
+    ],
+  },
+  {
+    category: "Additional Skills",
+    skills: [
+      "Technical Skills: API Development (RESTful and GraphQL), Automated testing with Selenium and JUnit",
+      "Product Development: Strong experience designing and launching digital products",
+      "Leadership & Management: Proven ability to lead teams and manage projects efficiently",
+      "Digital Marketing: Skills in brand building, SEO, and running e-commerce platforms",
+      "Content Creation: Expertise in creating compelling marketing and product content",
+    ],
   },
 ]
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-sans">
       {/* Navigation */}
       <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-5xl mx-auto px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm" asChild>
@@ -104,16 +237,17 @@ export default function ExperiencePage() {
               <div className="font-heading font-bold text-xl text-foreground">Experience</div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Home
               </Link>
-              <Link href="/tech-stack" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/tech-stack" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Tech Stack
               </Link>
-              <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Projects
               </Link>
-              <Button asChild>
+              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800"
+			  style={{ backgroundColor: "#b81202", color: "white" }}>
                 <Link href="/#contact">Contact</Link>
               </Button>
             </div>
@@ -121,186 +255,75 @@ export default function ExperiencePage() {
         </div>
       </nav>
 
-      {/* Header Section */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-6">Professional Experience</h1>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            A comprehensive overview of my professional journey spanning fintech, sustainability, digital marketing, and
-            research. Each role has contributed to my expertise in building scalable, user-focused applications.
+      {/* Main Content Container */}
+      <div className="max-w-5xl mx-auto min-h-screen p-16">
+        {/* Header Section */}
+        <div className="mb-16">
+          <h1 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight max-w-2xl mb-6">
+            Professional Experience
+          </h1>
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
+            My professional journey spans across fintech, healthcare AI, and enterprise software development, with
+            experience leading teams and building scalable solutions that drive business impact.
           </p>
         </div>
-      </section>
 
-      {/* Experience Timeline */}
-      <section className="py-8 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            {experiences.map((experience, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                    <div className="flex-1">
-                      <CardTitle className="font-heading text-2xl text-foreground mb-2">
-                        {experience.position}
-                      </CardTitle>
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Building className="h-4 w-4 text-primary" />
-                        <span className="font-semibold text-primary">{experience.company}</span>
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{experience.duration}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="h-4 w-4" />
-                          <span>{experience.location}</span>
-                        </div>
-                        <Badge variant="outline" className="w-fit">
-                          {experience.type}
-                        </Badge>
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6">{experience.description}</p>
+        {/* Professional Experience */}
+        <div className="space-y-16">
+          {experiences.map((experience, index) => (
+            <div key={index} className="space-y-4 group">
+              {/* Left Column - Content */}
+              <h3 className="text-lg font-medium text-gray-900 mb-4">{experience.company}</h3>
 
-                  <div className="mb-6">
-                    <h4 className="font-heading font-semibold text-lg mb-3">Key Achievements</h4>
-                    <ul className="space-y-2">
-                      {experience.achievements.map((achievement, achievementIndex) => (
-                        <li key={achievementIndex} className="flex items-start space-x-2 text-muted-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className="mb-4">
+                <p className="text-sm font-medium text-gray-900 mb-1">{experience.position}</p>
+                <p className="text-sm text-gray-600 mb-1">{experience.location}</p>
+                <p className="text-sm text-gray-600">{experience.duration}</p>
+              </div>
 
-                  <div>
-                    <h4 className="font-heading font-semibold text-lg mb-3">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-sm">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">{experience.description}</p>
+
+              <div className="mb-6">
+                <h4 className="text-sm font-medium text-gray-900 mb-3">Key Achievements:</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  {experience.achievements.slice(0, 3).map((achievement, achievementIndex) => (
+                    <li key={achievementIndex} className="flex items-start space-x-2">
+                      <div className="w-1 h-1 bg-gray-900 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                {experience.technologies.slice(0, 6).map((tech) => (
+                  <span key={tech} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+                {experience.technologies.length > 6 && (
+                  <span className="text-xs text-gray-500">+{experience.technologies.length - 6} more</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Education Section */}
+        <div className="mt-24 mb-16">
+          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Education</h2>
+
+          <div className="space-y-12">
+            {education.map((edu, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-lg font-medium text-gray-900">{edu.institution}</h3>
+                <p className="text-sm text-gray-600 mb-2">{edu.degree}</p>
+                <p className="text-sm text-gray-600">{edu.duration}</p>
+              </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Skills Summary */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl text-center mb-12">Career Highlights</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="font-heading font-bold text-3xl text-primary mb-2">4+</div>
-              <div className="text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="font-heading font-bold text-3xl text-primary mb-2">5</div>
-              <div className="text-muted-foreground">Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="font-heading font-bold text-3xl text-primary mb-2">25+</div>
-              <div className="text-muted-foreground">Projects Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="font-heading font-bold text-3xl text-primary mb-2">3</div>
-              <div className="text-muted-foreground">Industries</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills & Expertise */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl text-center mb-12">Core Competencies</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-xl text-primary">Technical Leadership</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Leading development teams and architecting scalable solutions for complex business requirements.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Team Leadership</Badge>
-                  <Badge variant="outline">System Architecture</Badge>
-                  <Badge variant="outline">Code Review</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-xl text-primary">Full Stack Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  End-to-end application development from database design to user interface implementation.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Frontend</Badge>
-                  <Badge variant="outline">Backend</Badge>
-                  <Badge variant="outline">Database</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-xl text-primary">Industry Expertise</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Deep understanding of fintech, healthcare, and digital marketing domain requirements.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Fintech</Badge>
-                  <Badge variant="outline">Healthcare</Badge>
-                  <Badge variant="outline">Digital Marketing</Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading font-bold text-3xl mb-6">Ready to Collaborate?</h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Let's discuss how my experience can contribute to your next project or team.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link href="/#contact">Get In Touch</Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/projects">View My Work</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border py-8 px-6">
-        <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
-        </div>
-      </footer>
+      </div>
     </div>
   )
 }
